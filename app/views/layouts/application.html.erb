@@ -32,15 +32,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Crée ton événement</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              S'inscrire / Se connecter
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "S'inscrire", new_user_registration_path, :class => "dropdown-item"%>
-              <%= link_to "Se connecter", new_user_session_path, :class => "dropdown-item"%>
-            </div>
-          </li>
+
+          <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Mon profil
@@ -50,9 +43,19 @@
               <%= link_to "Se déconnecter", "#", :class => "dropdown-item" %>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+          <% else %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              S'inscrire / Se connecter
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "S'inscrire", new_user_registration_path, :class => "dropdown-item"%>
+              <%= link_to "Se connecter", new_user_session_path, :class => "dropdown-item"%>
+            </div>
           </li>
+          <% end %>
+
+        
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
