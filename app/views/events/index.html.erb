@@ -1,2 +1,23 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">MyEventBrite, des événements partout en France</h1>
+    <p></p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+  </div>
+</div>
+
+<% Event.all.each do |event| %>
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2><%= event.title %></h2>
+      <p><%= event.description %></p>
+      <p><a class="btn btn-secondary" href="#" role="button">Voir plus »</a></p>
+    </div>
+  </div>
+  <% end %>
+
+  <hr>
+
+</div>
