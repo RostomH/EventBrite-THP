@@ -2,7 +2,12 @@
   <div class="container">
     <h1 class="display-3">MyEventBrite, des événements partout en France</h1>
     <p></p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+    <% if user_signed_in? %>
+    <p><%= link_to "Crée ton événement !", new_event_path, :class => "btn btn-primary btn-lg", :role => "button" %></p>
+    <% else %>
+    <p><a class="btn btn-primary btn-lg" href="<% new_user_session_path %>" role="button">Connexion »</a></p>
+    <%end%>
+    <p></p>
   </div>
 </div>
 

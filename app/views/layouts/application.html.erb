@@ -30,7 +30,7 @@
             <%= link_to "Accueil", root_path, :class => "nav-link"%>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Crée ton événement</a>
+            <%= link_to "Crée ton événement !", new_event_path, :class => "nav-link" %>
           </li>
 
           <% if user_signed_in? %>
