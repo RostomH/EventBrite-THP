@@ -15,7 +15,7 @@
 
       <div class="col-md-8 col-lg-6 col-xl-5 mx-auto">
       <% if current_user.first_name == nil%>
-        <h4 class="font-weight-bold my-4">Non renseigné</h4>
+        <h4 class="font-weight-bold my-4">Prénom non renseigné</h4>
       <% else %>
         <h4 class="font-weight-bold my-4"><%= current_user.first_name %> <%= current_user.last_name %></h4>
       <% end %>
@@ -23,7 +23,7 @@
           <%= current_user.email %>
         </div>
       <% if current_user.description == nil%>
-        <div class="text-muted mb-4">Non renseigné</div>
+        <div class="text-muted mb-4">Description non renseignée</div>
       <% else %>
         <div class="text-muted mb-4"><%= current_user.description %></div>
       <% end %>
