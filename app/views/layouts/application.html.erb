@@ -39,7 +39,7 @@
               Mon profil
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Mon profil", "#", :class => "dropdown-item" %>
+              <%= link_to "Mon profil", user_path(current_user.id), :class => "dropdown-item" %>
               <%= link_to "Se déconnecter", "#", :class => "dropdown-item" %>
             </div>
           </li>
