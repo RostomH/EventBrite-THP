@@ -12,17 +12,17 @@
 </div>
 
 <div class="container">
-<% Event.all.each do |event| %>
-  <!-- Example row of columns -->
   <div class="row">
+    <% Event.all.each do |event| %>
     <div class="col-md-4">
       <h2><%= event.title %></h2>
       <p><%= event.description %></p>
-      <p><a class="btn btn-secondary" href="#" role="button">Voir plus »</a></p>
+      <p> <%= link_to "Voir plus »", event_path(event.id), :class => "btn btn-secondary" %> </p>
     </div>
+    <% end %>
   </div>
-  <% end %>
 
   <hr>
 
 </div>
+
