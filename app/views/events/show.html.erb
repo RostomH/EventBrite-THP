@@ -1,0 +1,17 @@
+
+
+
+<div class="container">
+  <div class="text-center pt-5">
+    <img src="https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt class="ui-w-100 rounded-circle">
+  <div class="justify-content-center mt-5">
+    <p>Evénemenent : <%= @event.title %></p>
+    <p>Description : <%= @event.description %></p>
+    <p>Lieu : <%= @event.location %></p>
+    <p>Date de début : <%= @event.start_date %></p>
+    <p>Date de fin : <%= %></p>
+    <p>Hôte : <%= @event.admin.email %></p>
+    <p>Nombre d'inscrits : <% %></p>
+    <p>Prix : <%= @event.price %>€</p>
+</div>
+
