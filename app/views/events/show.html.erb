@@ -1,17 +1,25 @@
 
 
-
 <div class="container">
   <div class="text-center pt-5">
     <img src="https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt class="ui-w-100 rounded-circle">
   <div class="justify-content-center mt-5">
-    <p>Evénemenent : <%= @event.title %></p>
-    <p>Description : <%= @event.description %></p>
-    <p>Lieu : <%= @event.location %></p>
-    <p>Date de début : <%= @event.start_date %></p>
-    <p>Date de fin : <%= %></p>
-    <p>Hôte : <%= @event.admin.email %></p>
-    <p>Nombre d'inscrits : <% %></p>
-    <p>Prix : <%= @event.price %>€</p>
+    <h2><%= @event.title %></h2>
+    <p class="lead ml-5">
+      Description : <%= @event.description %><br />
+      Date de début : <span class="text-monospace"><%= @event.start_date.strftime("%d/%m/%Y, %H:%M") %></span><br />
+      Date de de fin : <span class="text-monospace"><%= (@event.start_date + @event.duration.minutes).strftime("%d/%m/%Y, %H:%M") %></span><br />
+      Durée : <span class="text-monospace"><%= @event.duration %></span> mins<br />
+      Lieu : <span class="text-monospace"><%= @event.location %></span><br />
+      Prix : <span class="text-monospace"><%= @event.price %> €</span>
+    </p>
+
+    <p class="lead ml-5">
+  Il y a pour l'instant <span class="text-monospace"><%= @event.attendances.count %></span> participant(s) à l'évènement
+    </p>  
+
+    <p class="lead ml-5">
+  L'évènement est tenu par : <%= @event.admin.email %>
+    </p>
 </div>
 
